@@ -68,28 +68,9 @@ services:
       - microb
       - microc
 
-  prometheus:
-    image: prom/prometheus:v2.28.1
-    container_name: prometheus
-    volumes:
-      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
-    ports:
-      - "9090:9090"
-
-  grafana:
-    image: grafana/grafana:8.1.5
-    container_name: grafana
-    ports:
-      - "3000:3000"
-    volumes:
-      - grafana-storage:/var/lib/grafana
-    depends_on:
-      - prometheus
-
 volumes:
   wordpress:
   db:
   microa:
   microb:
   microc:
-  grafana-storage:
