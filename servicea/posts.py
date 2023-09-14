@@ -9,8 +9,8 @@ import os
 
 # Initialisation de la session Flask côté serveur
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')  # secret key config
-app.config['SESSION_TYPE'] = os.environ.get('SESSION_TYPE') # stockage de la session
+app.config['SECRET_KEY'] = 'dev'  # secret key config
+app.config['SESSION_TYPE'] = 'filesystem' # stockage de la session
 Session(app)
 
 # Initialisation du limiter
