@@ -1,0 +1,16 @@
+global:
+  scrape_interval: 30s
+
+scrape_configs:
+  - job_name: 'microa'
+    metrics_path: '/metrics'
+    static_configs:
+    - targets: ['microa:8081']
+
+  - job_name: 'microb'
+    static_configs:
+    - targets: ['microb:8083']
+
+  - job_name: 'microc'
+    static_configs:
+    - targets: ['microc:8084']

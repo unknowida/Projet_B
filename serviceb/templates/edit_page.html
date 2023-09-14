@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editer un post</title>
+    <style>
+        /* Resetting some default styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f7f7f7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 40px; /* Increased space */
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"], textarea {
+            padding: 10px 15px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            background-color: #fff;
+            transition: border 0.3s;
+        }
+
+        input[type="text"]:focus, textarea:focus {
+            border: 1px solid #007BFF;
+            outline: none;
+        }
+
+        /* Button styles */
+        .button {
+            display: inline-block;
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            border-radius: 20px;
+            padding: 10px 15px;
+            font-size: 0.9em;
+            text-decoration: none;
+            width: 180px; /* Fixed width for consistency */
+            box-sizing: border-box;
+            margin-bottom: 30px; /* Increased space */
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #0056b3; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Editer une Page</h1>
+    <a href="/microb/list_pages" class="button">Retour</a>
+    
+    <form method="POST" style="display: flex; flex-direction: column; align-items: center; width: 50%;">
+        <label for="title">Titre:</label>
+        <input type="text" id="title" name="title" value="{{ page.title.rendered }}" required>
+        <label for="content">Contenu:</label>
+        <textarea id="content" name="content">{{ page.content.rendered }}</textarea>
+        <input type="submit" value="Sauvegarder" class="button">
+    </form>
+</body>
+</html>

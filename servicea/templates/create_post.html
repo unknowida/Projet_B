@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un nouveau post</title>
+    <style>
+        /* Resetting some default styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f7f7f7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Button styles */
+        .button {
+            display: inline-block;
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            border-radius: 20px;
+            padding: 8px 12px;
+            font-size: 0.85em;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            width: 150px;  /* Adjusted width */
+            margin-bottom: 20px;  /* Added space between button and fields */
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        input[type="text"], input[type="password"], textarea {
+            padding: 10px 15px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 20px;  /* Space between each field */
+            placeholder: grey;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .credentials {
+            margin-top: 30px;  /* Added space between "Titre/Contenu" and "Utilisateur/Mot de Passe" */
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Ajouter un nouveau Post</h1>
+    <a href="/microa/list_posts" class="button">Retour</a>
+    
+    <form method="post" style="display: flex; flex-direction: column; align-items: center; width: 50%;">
+        <label for="title">Titre:</label>
+        <input type="text" id="title" name="title" placeholder="Votre texte ici..." required>
+        <label for="content">Contenu:</label>
+        <textarea id="content" name="content" placeholder="Votre texte ici..." required></textarea>
+        
+        <input type="submit" value="Poster" class="button">
+    </form>
+</body>
+</html>

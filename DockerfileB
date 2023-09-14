@@ -1,0 +1,21 @@
+FROM python:latest
+
+# Create a new user and group with non-root privileges
+RUN groupadd -r appuser && useradd -r -g appuser -m -d /app appuser
+
+# Set the working directory
+WORKDIR /app
+
+# Copy your service files
+COPY /serviceb .
+
+# Install Python requirements
+RUN pip install -r ./requirements.txt
+
+# Switch to the non-root user for the subsequent commands
+USER appuser
+
+EXPOSE 80/tcp
+EXPOSE 5000/tcp
+
+ENTRYPOINT [ "python", "pages.py" ]
